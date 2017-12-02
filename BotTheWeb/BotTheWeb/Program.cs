@@ -23,15 +23,13 @@ namespace BotTheWeb
 
 
             var titles = chromeDriver.FindElementByClassName("title may-blank").ToString();
+            var collector = new List<string> {titles};
 
-            foreach (var title in titles)
+            foreach (var title in collector)
             {
-                Console.WriteLine(title.Text);
+                Console.WriteLine(title);
             }
 
-//
-//
-//
 //            //Grab the name of input as the way to navigate to that element
 //            chromeDriver.FindElementByName("q").Click();
 //
