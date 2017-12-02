@@ -19,14 +19,27 @@ namespace BotTheWeb
             var chromeDriver = new ChromeDriver(options);
             //navigate to a url 
             chromeDriver.Navigate().GoToUrl("https://reddit.com");
-            //Grab the name of input as the way to navigate to that element
-            chromeDriver.FindElementByName("q").Click();
 
 
-            //pass the string "test" to the element above
-            chromeDriver.Keyboard.SendKeys("Test");
-            //press enter
-            chromeDriver.Keyboard.SendKeys(Keys.Enter);
+
+            var titles = chromeDriver.FindElementByClassName("title may-blank").ToString();
+
+            foreach (var title in titles)
+            {
+                Console.WriteLine(title.Text);
+            }
+
+//
+//
+//
+//            //Grab the name of input as the way to navigate to that element
+//            chromeDriver.FindElementByName("q").Click();
+//
+//
+//            //pass the string "test" to the element above
+//            chromeDriver.Keyboard.SendKeys("Test");
+//            //press enter
+//            chromeDriver.Keyboard.SendKeys(Keys.Enter);
 
 
         }
