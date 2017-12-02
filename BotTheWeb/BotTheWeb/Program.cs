@@ -22,7 +22,7 @@ namespace BotTheWeb
 
 
 
-            var titles = chromeDriver.FindElementByClassName("title may-blank").ToString();
+            var titles = chromeDriver.FindElementByClassName("title").ToString();
             var collector = new List<string> {titles};
 
             foreach (var title in collector)
