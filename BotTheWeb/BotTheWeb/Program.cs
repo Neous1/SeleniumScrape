@@ -18,8 +18,10 @@ namespace BotTheWeb
             var chromeDriver = new ChromeDriver(options);
             //navigate to a url 
             chromeDriver.Navigate().GoToUrl("https://reddit.com");
+            //Grab the Xpath as the way to navigate to that element
+            chromeDriver.FindElementByXPath("//*[@id\"search\"]/input[1]").Click();
 
-        
+
         }
     }
 }
