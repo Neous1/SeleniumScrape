@@ -16,7 +16,10 @@ namespace BotTheWeb
 
             //create a chroe driver
             var chromeDriver = new ChromeDriver(options);
+            //navigate to a url 
+            chromeDriver.Navigate().GoToUrl("https://reddit.com");
 
+        
         }
     }
 }
