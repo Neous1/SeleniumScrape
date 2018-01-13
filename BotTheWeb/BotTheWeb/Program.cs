@@ -17,17 +17,23 @@ namespace BotTheWeb
 
             //create a chroe driver
             var chromeDriver = new ChromeDriver(options);
+
             //navigate to a url 
-            chromeDriver.Navigate().GoToUrl("https://reddit.com");
+            //chromeDriver.Navigate().GoToUrl("https://reddit.com");
+            //chromeDriver.Navigate().GoToUrl("https://www.ebay.com/sch/i.html?_from=R40&_trksid=p2380057.m570.l1313.TR0.TRC0.H0.Xlenovo.TRS0&_nkw=lenovo&_sacat=0");
+            chromeDriver.Navigate().GoToUrl("https://coinmarketcap.com/");
 
 
+            //populate titles for ebay
+            //var titles = chromeDriver.FindElements(by: By.ClassName("lvtitle"));
+            var titles = chromeDriver.FindElements(by: By.ClassName("col-rank"));
+            //populate titles for reddit.
+            //var titles = chromeDriver.FindElementByClassName("title").ToString();
+           //var collector = new List<string> {titles};
 
-            var titles = chromeDriver.FindElementByClassName("title").ToString();
-            var collector = new List<string> {titles};
-
-            foreach (var title in collector)
+            foreach (var title in titles)
             {
-                Console.WriteLine(title);
+                Console.WriteLine(title.Text);
             }
 
 //            //Grab the name of input as the way to navigate to that element
@@ -43,3 +49,4 @@ namespace BotTheWeb
         }
     }
 }
+    
